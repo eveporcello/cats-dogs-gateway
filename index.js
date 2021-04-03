@@ -5,11 +5,14 @@ const gateway = new ApolloGateway();
 
 const PORT = process.env.PORT || 4000;
 
-const server = new ApolloServer({
-  gateway,
-  subscriptions: false
-});
+const start = async () => {
+  const server = new ApolloServer({
+    gateway,
+    subscriptions: false
+  });
+  server.listen({ port: PORT }).then(({ port }) => {
+    console.log(`🐩 Pet Gateway available at ${port}`);
+  });
+};
 
-server.listen({ port: PORT }).then(({ port }) => {
-  console.log(`🐩 Pet Gateway available at ${port}`);
-});
+start();
