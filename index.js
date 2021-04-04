@@ -11,9 +11,7 @@ const gateway = new ApolloGateway({
       name: "dogs",
       url: "https://dogs-federation.herokuapp.com/"
     }
-  ],
-  debug: true
-});
+  ]);
 
 const PORT = process.env.PORT || 4000;
 
