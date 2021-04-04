@@ -9,6 +9,9 @@ const start = async () => {
   const server = new ApolloServer({
     gateway,
     subscriptions: false
+    // apollo: {
+    //   key: "addkey"
+    // }
   });
   server.listen({ port: PORT }).then(({ port }) => {
     console.log(`🐩 Pet Gateway available at ${port}`);
